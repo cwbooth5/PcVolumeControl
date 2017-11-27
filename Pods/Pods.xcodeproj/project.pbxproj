@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05EF0CC8714A636FA73C9B0E042F9A69 /* SwiftSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13AA05A1F0BFA3D3CE7142BBF8DA72EA /* Pods-PcVolumeControlUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC938909F47963F64819E9CC5D1D4C2E /* Pods-PcVolumeControlUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1750666DE821781CF560DA4BCF986E61 /* SwiftSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */; };
+		18E617A51760F7391458FA354642C88A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */; };
+		2305A894BAAA09E4DBE5CDCFF1C66C66 /* Pods-PcVolumeControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 250A684095A80E5FB022AF42D8DC32FD /* Pods-PcVolumeControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23D1860AD10A503681F05920D0042CE8 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */; };
+		270F0569F59EF49AD16D70FEAF303B06 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */; };
+		283FCC48A5433A8571F2F7151048CFBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		43E4F1B8F25FB2A17FD6CC82E6EE249C /* Pods-PcVolumeControlUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A945626BFA4A852C4BB024F94AA62 /* Pods-PcVolumeControlUITests-dummy.m */; };
+		44EF3177F4C95772A846EAD69638826D /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */; };
+		45D67A5875BB284EAAD318135E42F00B /* Pods-PcVolumeControlTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9C0387D6F4E2FA7ADE464AC5BFBF30 /* Pods-PcVolumeControlTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60C3B6210939423A5A6AD30DBB1B7356 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6A23DF8A130AB8FE581E12C59F983BE3 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */; };
+		824EF4FCC2EE051557506F8C7DC4B2A2 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */; };
+		9B677372B700BBB53817B73FC266E9D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BF2A1DD4707C9A2E415A75255862B160 /* Pods-PcVolumeControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69E55E054164A58FFA61C1D3BE8B36 /* Pods-PcVolumeControl-dummy.m */; };
+		CC7D5796B171F389593FF9FC14F8A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D5D5307B42E6588D353BE98C61CFF0FE /* Pods-PcVolumeControlTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32429ABB8731401F66BFE10A090192F8 /* Pods-PcVolumeControlTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ACCA690DFDD7B2A0CD64F69485569CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225B271D6E456105BC3E19ADAE0774A6;
+			remoteInfo = SwiftSocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09E3B1ACB1A50FA8E981CFCEACE72BB1 /* Pods-PcVolumeControl-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PcVolumeControl-acknowledgements.plist"; sourceTree = "<group>"; };
+		0ABAA2B3F0C93D4A8831D67A0775F3E1 /* Pods-PcVolumeControlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0D68BCE75A802A981F8025E89EE8C0C9 /* Pods-PcVolumeControlTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PcVolumeControlTests.modulemap"; sourceTree = "<group>"; };
+		194A0F9E37C0067C46C9A178022DE3FD /* Pods-PcVolumeControlUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PcVolumeControlUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		19E5DE48E056D1BB99E10BE93501F8CC /* Pods-PcVolumeControlUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PcVolumeControlUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1F52FF6FD30742BB0C137A621B10F2C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20124FD4ED9BD906774104F3AF7E20D8 /* Pods-PcVolumeControl-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PcVolumeControl-acknowledgements.markdown"; sourceTree = "<group>"; };
+		21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ytcpsocket.c; path = Sources/ytcpsocket.c; sourceTree = "<group>"; };
+		250A684095A80E5FB022AF42D8DC32FD /* Pods-PcVolumeControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PcVolumeControl-umbrella.h"; sourceTree = "<group>"; };
+		2680B5F88007F9E40BD02845BA45A5D0 /* Pods_PcVolumeControlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PcVolumeControlUITests.framework; path = "Pods-PcVolumeControlUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3FAF519A79105AFDDA28D85CD3D64B /* Pods-PcVolumeControlTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControlTests-resources.sh"; sourceTree = "<group>"; };
+		2E52EC9DCAF52EBF6311E52B37BBE574 /* Pods-PcVolumeControlTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControlTests-frameworks.sh"; sourceTree = "<group>"; };
+		31F93E7113EED69B088AB532C45E5FC0 /* SwiftSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSocket-prefix.pch"; sourceTree = "<group>"; };
+		32429ABB8731401F66BFE10A090192F8 /* Pods-PcVolumeControlTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PcVolumeControlTests-dummy.m"; sourceTree = "<group>"; };
+		3568B3999E52B8453DBE5192CC3DC388 /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSocket.framework; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSocket-umbrella.h"; sourceTree = "<group>"; };
+		5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = yudpsocket.c; path = Sources/yudpsocket.c; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		777B780574BE2141C0C5A02EA2518BF7 /* SwiftSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSocket.modulemap; sourceTree = "<group>"; };
+		7F3A945626BFA4A852C4BB024F94AA62 /* Pods-PcVolumeControlUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PcVolumeControlUITests-dummy.m"; sourceTree = "<group>"; };
+		886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UDPClient.swift; path = Sources/UDPClient.swift; sourceTree = "<group>"; };
+		886CB738A5B6C5E15B18DB44E8A0AB5A /* Pods-PcVolumeControl-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControl-resources.sh"; sourceTree = "<group>"; };
+		8A45587BF02D961C042E5ABA0FD82DB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B9C0387D6F4E2FA7ADE464AC5BFBF30 /* Pods-PcVolumeControlTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PcVolumeControlTests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		964959FC4BC7DD866C31E90851D390F4 /* Pods_PcVolumeControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PcVolumeControlTests.framework; path = "Pods-PcVolumeControlTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSocket.xcconfig; sourceTree = "<group>"; };
+		9CF22CB071D3465975A47DF95BAEFB51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
+		9F1A0CBC0938D9F73C33FECFCDB6CB9D /* Pods-PcVolumeControlUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControlUITests-frameworks.sh"; sourceTree = "<group>"; };
+		A04C36EF409A4CAC170E258DDB2A0F09 /* Pods-PcVolumeControlUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PcVolumeControlUITests.modulemap"; sourceTree = "<group>"; };
+		B45991703FA58E2E7EDD2704E4C49340 /* Pods_PcVolumeControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PcVolumeControl.framework; path = "Pods-PcVolumeControl.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSocket-dummy.m"; sourceTree = "<group>"; };
+		BE69E55E054164A58FFA61C1D3BE8B36 /* Pods-PcVolumeControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PcVolumeControl-dummy.m"; sourceTree = "<group>"; };
+		C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TCPClient.swift; path = Sources/TCPClient.swift; sourceTree = "<group>"; };
+		C7D30AB8ADB8FD92DDC9A15A6E737B85 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D86510086E1758BC66F90F592289EAFE /* Pods-PcVolumeControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB9B11B5B97CE2D9F507AFC6EAD5CC39 /* Pods-PcVolumeControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = Sources/Socket.swift; sourceTree = "<group>"; };
+		DFC4841099D02DEDDD7EA0725494AB32 /* Pods-PcVolumeControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PcVolumeControl.modulemap"; sourceTree = "<group>"; };
+		E3AB6311014CF9DC7E7AEEDEC3FACEB7 /* Pods-PcVolumeControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControl.debug.xcconfig"; sourceTree = "<group>"; };
+		E7BD0ABDC54A6DE43E9612ABF77754F8 /* Pods-PcVolumeControlTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PcVolumeControlTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		EC5E7E90F02946F40081750335D009CE /* Pods-PcVolumeControlUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControlUITests-resources.sh"; sourceTree = "<group>"; };
+		F1671B8F351EDD8F822EC345C49D7DDD /* Pods-PcVolumeControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControlTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3BB6C130E2910316F28D6A9CE32F025 /* Pods-PcVolumeControlTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PcVolumeControlTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC938909F47963F64819E9CC5D1D4C2E /* Pods-PcVolumeControlUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PcVolumeControlUITests-umbrella.h"; sourceTree = "<group>"; };
+		FE5705290D5EF1DECBBED5EDCB7D4A87 /* Pods-PcVolumeControl-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PcVolumeControl-frameworks.sh"; sourceTree = "<group>"; };
+		FF19B0E30CC49C0C81CE357D71BC11E2 /* Pods-PcVolumeControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PcVolumeControl.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DE0A325078602F992F3375EB4007514 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283FCC48A5433A8571F2F7151048CFBE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		591508AFC724B210FE9C88821997CDFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C3B6210939423A5A6AD30DBB1B7356 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7304CDE2AFBE4644FB7D483B3AFDB049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7D5796B171F389593FF9FC14F8A442 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		834AE49CD3D329565D32ECD710D9500C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B677372B700BBB53817B73FC266E9D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F81F21E9B2EFE1074777E2D2759FF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A44A66ADA1344DA9E7A74277DE6C0CE1 /* SwiftSocket */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1A34407A3D900F2501CCE81458791074 /* Pods-PcVolumeControlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C7D30AB8ADB8FD92DDC9A15A6E737B85 /* Info.plist */,
+				A04C36EF409A4CAC170E258DDB2A0F09 /* Pods-PcVolumeControlUITests.modulemap */,
+				19E5DE48E056D1BB99E10BE93501F8CC /* Pods-PcVolumeControlUITests-acknowledgements.markdown */,
+				194A0F9E37C0067C46C9A178022DE3FD /* Pods-PcVolumeControlUITests-acknowledgements.plist */,
+				7F3A945626BFA4A852C4BB024F94AA62 /* Pods-PcVolumeControlUITests-dummy.m */,
+				9F1A0CBC0938D9F73C33FECFCDB6CB9D /* Pods-PcVolumeControlUITests-frameworks.sh */,
+				EC5E7E90F02946F40081750335D009CE /* Pods-PcVolumeControlUITests-resources.sh */,
+				FC938909F47963F64819E9CC5D1D4C2E /* Pods-PcVolumeControlUITests-umbrella.h */,
+				DB9B11B5B97CE2D9F507AFC6EAD5CC39 /* Pods-PcVolumeControlUITests.debug.xcconfig */,
+				0ABAA2B3F0C93D4A8831D67A0775F3E1 /* Pods-PcVolumeControlUITests.release.xcconfig */,
+			);
+			name = "Pods-PcVolumeControlUITests";
+			path = "Target Support Files/Pods-PcVolumeControlUITests";
+			sourceTree = "<group>";
+		};
+		4FB16844A5EE2A50C02586840DBBC938 /* Pods-PcVolumeControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F52FF6FD30742BB0C137A621B10F2C0 /* Info.plist */,
+				0D68BCE75A802A981F8025E89EE8C0C9 /* Pods-PcVolumeControlTests.modulemap */,
+				F3BB6C130E2910316F28D6A9CE32F025 /* Pods-PcVolumeControlTests-acknowledgements.markdown */,
+				E7BD0ABDC54A6DE43E9612ABF77754F8 /* Pods-PcVolumeControlTests-acknowledgements.plist */,
+				32429ABB8731401F66BFE10A090192F8 /* Pods-PcVolumeControlTests-dummy.m */,
+				2E52EC9DCAF52EBF6311E52B37BBE574 /* Pods-PcVolumeControlTests-frameworks.sh */,
+				2A3FAF519A79105AFDDA28D85CD3D64B /* Pods-PcVolumeControlTests-resources.sh */,
+				8B9C0387D6F4E2FA7ADE464AC5BFBF30 /* Pods-PcVolumeControlTests-umbrella.h */,
+				D86510086E1758BC66F90F592289EAFE /* Pods-PcVolumeControlTests.debug.xcconfig */,
+				F1671B8F351EDD8F822EC345C49D7DDD /* Pods-PcVolumeControlTests.release.xcconfig */,
+			);
+			name = "Pods-PcVolumeControlTests";
+			path = "Target Support Files/Pods-PcVolumeControlTests";
+			sourceTree = "<group>";
+		};
+		5B5F3CC51A586FE2334FC61FFF38299D /* Pods-PcVolumeControl */ = {
+			isa = PBXGroup;
+			children = (
+				8A45587BF02D961C042E5ABA0FD82DB7 /* Info.plist */,
+				DFC4841099D02DEDDD7EA0725494AB32 /* Pods-PcVolumeControl.modulemap */,
+				20124FD4ED9BD906774104F3AF7E20D8 /* Pods-PcVolumeControl-acknowledgements.markdown */,
+				09E3B1ACB1A50FA8E981CFCEACE72BB1 /* Pods-PcVolumeControl-acknowledgements.plist */,
+				BE69E55E054164A58FFA61C1D3BE8B36 /* Pods-PcVolumeControl-dummy.m */,
+				FE5705290D5EF1DECBBED5EDCB7D4A87 /* Pods-PcVolumeControl-frameworks.sh */,
+				886CB738A5B6C5E15B18DB44E8A0AB5A /* Pods-PcVolumeControl-resources.sh */,
+				250A684095A80E5FB022AF42D8DC32FD /* Pods-PcVolumeControl-umbrella.h */,
+				E3AB6311014CF9DC7E7AEEDEC3FACEB7 /* Pods-PcVolumeControl.debug.xcconfig */,
+				FF19B0E30CC49C0C81CE357D71BC11E2 /* Pods-PcVolumeControl.release.xcconfig */,
+			);
+			name = "Pods-PcVolumeControl";
+			path = "Target Support Files/Pods-PcVolumeControl";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				04F81F21E9B2EFE1074777E2D2759FF9 /* Pods */,
+				C06927ADDF3F79111B92894B6F201F39 /* Products */,
+				B35B25E061930740CA84C94F845F12DF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A44A66ADA1344DA9E7A74277DE6C0CE1 /* SwiftSocket */ = {
+			isa = PBXGroup;
+			children = (
+				9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */,
+				DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */,
+				C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */,
+				886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */,
+				21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */,
+				5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */,
+				AE1F57FCCE0C2C4E7D884CED9E6BE226 /* Support Files */,
+			);
+			name = SwiftSocket;
+			path = SwiftSocket;
+			sourceTree = "<group>";
+		};
+		AE1F57FCCE0C2C4E7D884CED9E6BE226 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF22CB071D3465975A47DF95BAEFB51 /* Info.plist */,
+				777B780574BE2141C0C5A02EA2518BF7 /* SwiftSocket.modulemap */,
+				97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */,
+				B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */,
+				31F93E7113EED69B088AB532C45E5FC0 /* SwiftSocket-prefix.pch */,
+				566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftSocket";
+			sourceTree = "<group>";
+		};
+		B35B25E061930740CA84C94F845F12DF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B5F3CC51A586FE2334FC61FFF38299D /* Pods-PcVolumeControl */,
+				4FB16844A5EE2A50C02586840DBBC938 /* Pods-PcVolumeControlTests */,
+				1A34407A3D900F2501CCE81458791074 /* Pods-PcVolumeControlUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C06927ADDF3F79111B92894B6F201F39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B45991703FA58E2E7EDD2704E4C49340 /* Pods_PcVolumeControl.framework */,
+				964959FC4BC7DD866C31E90851D390F4 /* Pods_PcVolumeControlTests.framework */,
+				2680B5F88007F9E40BD02845BA45A5D0 /* Pods_PcVolumeControlUITests.framework */,
+				3568B3999E52B8453DBE5192CC3DC388 /* SwiftSocket.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		33FCD72077594A297A837E8A65DD6795 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D67A5875BB284EAAD318135E42F00B /* Pods-PcVolumeControlTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA780950492E7731E82F3272181F957 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2305A894BAAA09E4DBE5CDCFF1C66C66 /* Pods-PcVolumeControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ECDD1BEF1DAC3C24CF48CA9ABE85EDB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13AA05A1F0BFA3D3CE7142BBF8DA72EA /* Pods-PcVolumeControlUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A2EA5F8D51A67F1CB15ECE9C32AC216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EF0CC8714A636FA73C9B0E042F9A69 /* SwiftSocket-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		225B271D6E456105BC3E19ADAE0774A6 /* SwiftSocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DAB4785E9EC99DE5C429F3187CF021A /* Build configuration list for PBXNativeTarget "SwiftSocket" */;
+			buildPhases = (
+				1DEFBECAC0A7EF9EF78326E902D010BD /* Sources */,
+				3DE0A325078602F992F3375EB4007514 /* Frameworks */,
+				9A2EA5F8D51A67F1CB15ECE9C32AC216 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSocket;
+			productName = SwiftSocket;
+			productReference = 3568B3999E52B8453DBE5192CC3DC388 /* SwiftSocket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5A4C80B450883BAC2799369DFF0736EA /* Pods-PcVolumeControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76348DDD2AFC944393378430BA356B76 /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControlUITests" */;
+			buildPhases = (
+				21780B94265BB17F83947B7B75AA82BD /* Sources */,
+				591508AFC724B210FE9C88821997CDFB /* Frameworks */,
+				7ECDD1BEF1DAC3C24CF48CA9ABE85EDB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PcVolumeControlUITests";
+			productName = "Pods-PcVolumeControlUITests";
+			productReference = 2680B5F88007F9E40BD02845BA45A5D0 /* Pods_PcVolumeControlUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		77E4DFBC46EFFE9775AC2413F6B12830 /* Pods-PcVolumeControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92CADC25A8EF41E4D58C17ED8E46875E /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControlTests" */;
+			buildPhases = (
+				52B06278634BEA33AE7E5C54E3FD2D60 /* Sources */,
+				834AE49CD3D329565D32ECD710D9500C /* Frameworks */,
+				33FCD72077594A297A837E8A65DD6795 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PcVolumeControlTests";
+			productName = "Pods-PcVolumeControlTests";
+			productReference = 964959FC4BC7DD866C31E90851D390F4 /* Pods_PcVolumeControlTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A6E59346247EA83FBD662B8406EFA271 /* Pods-PcVolumeControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8C579B6F827BA5BC0CD0D9089C178C /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControl" */;
+			buildPhases = (
+				99B05C0113DA42F24D99DA159EB8E84A /* Sources */,
+				7304CDE2AFBE4644FB7D483B3AFDB049 /* Frameworks */,
+				3BA780950492E7731E82F3272181F957 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40A56D90ECA476E1D9B5788D0F377DE2 /* PBXTargetDependency */,
+			);
+			name = "Pods-PcVolumeControl";
+			productName = "Pods-PcVolumeControl";
+			productReference = B45991703FA58E2E7EDD2704E4C49340 /* Pods_PcVolumeControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C06927ADDF3F79111B92894B6F201F39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6E59346247EA83FBD662B8406EFA271 /* Pods-PcVolumeControl */,
+				77E4DFBC46EFFE9775AC2413F6B12830 /* Pods-PcVolumeControlTests */,
+				5A4C80B450883BAC2799369DFF0736EA /* Pods-PcVolumeControlUITests */,
+				225B271D6E456105BC3E19ADAE0774A6 /* SwiftSocket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DEFBECAC0A7EF9EF78326E902D010BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18E617A51760F7391458FA354642C88A /* Result.swift in Sources */,
+				44EF3177F4C95772A846EAD69638826D /* Socket.swift in Sources */,
+				1750666DE821781CF560DA4BCF986E61 /* SwiftSocket-dummy.m in Sources */,
+				23D1860AD10A503681F05920D0042CE8 /* TCPClient.swift in Sources */,
+				6A23DF8A130AB8FE581E12C59F983BE3 /* UDPClient.swift in Sources */,
+				824EF4FCC2EE051557506F8C7DC4B2A2 /* ytcpsocket.c in Sources */,
+				270F0569F59EF49AD16D70FEAF303B06 /* yudpsocket.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21780B94265BB17F83947B7B75AA82BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E4F1B8F25FB2A17FD6CC82E6EE249C /* Pods-PcVolumeControlUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B06278634BEA33AE7E5C54E3FD2D60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D5307B42E6588D353BE98C61CFF0FE /* Pods-PcVolumeControlTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99B05C0113DA42F24D99DA159EB8E84A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2A1DD4707C9A2E415A75255862B160 /* Pods-PcVolumeControl-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40A56D90ECA476E1D9B5788D0F377DE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftSocket;
+			target = 225B271D6E456105BC3E19ADAE0774A6 /* SwiftSocket */;
+			targetProxy = 4ACCA690DFDD7B2A0CD64F69485569CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49BB858066544175E3FA00C049DDF825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1671B8F351EDD8F822EC345C49D7DDD /* Pods-PcVolumeControlTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControlTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControlTests/Pods-PcVolumeControlTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControlTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3C2A56C3809E6532995BA7BB42BCEB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSocket/SwiftSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSocket/SwiftSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C54805327251A18BEF82632A390D5C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF19B0E30CC49C0C81CE357D71BC11E2 /* Pods-PcVolumeControl.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControl/Pods-PcVolumeControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF63E4359FAF7970264A122B3377C58A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D86510086E1758BC66F90F592289EAFE /* Pods-PcVolumeControlTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControlTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControlTests/Pods-PcVolumeControlTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControlTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D308BD0365A9DFD49F5859454C3CEC03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB9B11B5B97CE2D9F507AFC6EAD5CC39 /* Pods-PcVolumeControlUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControlUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControlUITests/Pods-PcVolumeControlUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControlUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D8277B0D578D7C58A7FB11CF672D58CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSocket/SwiftSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSocket/SwiftSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD2A8F9E0F747A297868B11C234D24B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3AB6311014CF9DC7E7AEEDEC3FACEB7 /* Pods-PcVolumeControl.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControl/Pods-PcVolumeControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EED546DBB23FC32035C9BDC4E22B30BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F6022627E23F63F119BD3A766EDC049E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ABAA2B3F0C93D4A8831D67A0775F3E1 /* Pods-PcVolumeControlUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PcVolumeControlUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PcVolumeControlUITests/Pods-PcVolumeControlUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PcVolumeControlUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED546DBB23FC32035C9BDC4E22B30BD /* Debug */,
+				157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DAB4785E9EC99DE5C429F3187CF021A /* Build configuration list for PBXNativeTarget "SwiftSocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8277B0D578D7C58A7FB11CF672D58CC /* Debug */,
+				B3C2A56C3809E6532995BA7BB42BCEB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E8C579B6F827BA5BC0CD0D9089C178C /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2A8F9E0F747A297868B11C234D24B4 /* Debug */,
+				C54805327251A18BEF82632A390D5C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76348DDD2AFC944393378430BA356B76 /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D308BD0365A9DFD49F5859454C3CEC03 /* Debug */,
+				F6022627E23F63F119BD3A766EDC049E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92CADC25A8EF41E4D58C17ED8E46875E /* Build configuration list for PBXNativeTarget "Pods-PcVolumeControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF63E4359FAF7970264A122B3377C58A /* Debug */,
+				49BB858066544175E3FA00C049DDF825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
