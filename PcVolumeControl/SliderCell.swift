@@ -12,5 +12,5 @@ class SliderCell: UITableViewCell {
     
     @IBOutlet weak var actualSlider: UISlider!
     @IBOutlet weak var sliderTextField: UITextField!
-    
+    @IBOutlet weak var sliderMuteButton: UIButton!
 }
