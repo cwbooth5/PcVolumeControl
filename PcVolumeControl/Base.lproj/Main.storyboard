@@ -100,6 +100,7 @@
                                                     <color key="tintColor" red="0.99947589635848999" green="0.24735480546951294" blue="0.50587821006774902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbq-8V-y92"/>
+                                                        <action selector="volumeChanged:" destination="7kF-Gh-78R" eventType="touchUpInside" id="szE-wq-p9x"/>
                                                     </connections>
                                                 </slider>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-fw-yaS">
@@ -110,6 +111,9 @@
                                                         <constraint firstAttribute="width" secondItem="Hxy-fw-yaS" secondAttribute="height" multiplier="10:9" id="rB2-ji-aEV"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="unmute"/>
+                                                    <connections>
+                                                        <action selector="muteTapped:" destination="7kF-Gh-78R" eventType="valueChanged" id="9DD-3S-q5O"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.10196217149496078" green="0.10195901244878769" blue="0.10195962339639664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

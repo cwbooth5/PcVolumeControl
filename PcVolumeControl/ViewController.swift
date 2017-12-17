@@ -39,12 +39,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var client: TCPClient?
     var lastState: String?
     var wholeResponse = [UInt8]()
-    var sessionNames: [String] = ["placeholder"]
-    var sliderValues: [Float] = [20.0]
-    var muteValues: [Bool] = [false]
+//    var sessionNames: [String] = ["placeholder"]
+//    var sliderValues: [Float] = [20.0]
+//    var muteValues: [Bool] = [false]
     var fullState: FullState?
     var soundLevel: Float?
     var selectedDefaultDevice: String?
+    
+    var allSessions: [String]
+    // What thefuck....
+    
+    //    var initialSession = Session(id: "123", muted: false, name: "placeholder", volume: 20.0)
+    allSessions.append(Session(id: "123", muted: false, name: "placeholder", volume: 20.0))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-
-    func insertNewSlider(name: String, volume: Float, muted: Bool, index: IndexPath) {
-
-        
+    func insertNewSlider(index: IndexPath) {
         sliderTableView.deleteRows(at: [index], with: .automatic)
         sliderTableView.insertRows(at: [index], with: .automatic)
     }
@@ -82,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sliderTableView.beginUpdates()
         for value in fullState!.deviceIds.values {
             print("device added to slider text field: \(value)")
-            insertNewSlider(name: value, volume: 75.0, muted: true, index: index)
+            insertNewSlider(index: index)
         }
         sliderTableView.endUpdates()
         DispatchQueue.main.async{
@@ -169,7 +171,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
 //        insertNewSlider(version: decodedState.defaultDevice.name)
 //        let indexPath = IndexPath(row: sessionNames.count - 1, section: 0)
-//        insertNewSlider(name: "namestring", volume: 65.0, muted: false, index: indexPath)
         return 1
     }
     
@@ -253,56 +254,55 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: the picker is going to have to list all the device IDs...
-//        return fullState!.deviceIds.count
-        return sessionNames.count
+//        return sessionNames.count
+        return allSessions.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // The full table needs to completely reload.
         let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! SliderCell
+        
+        cell.delegate = self
         // Different treatment before connection versus after an update
         if fullState != nil {
             // If we have already connected
             sessionNames.removeAll()
+            allSessions.removeAll()
 
-            for sessionItem : FullState.Session in fullState!.defaultDevice.sessions {
-                sessionNames.append(sessionItem.name)
-                sliderValues.append(sessionItem.volume)
-                muteValues.append(sessionItem.muted)
-                print(sessionItem.volume)
+            for x : FullState.Session in fullState!.defaultDevice.sessions {
+                // build an array of all the sessions.
+                allSessions.append(Session(id: x.id, muted: x.muted, name: x.name, volume: x.volume))
+//                sessionNames.append(x.name)
+                
+//                sliderValues.append(x.volume)
+//                muteValues.append(x.muted)
             }
             
-//            var allSessions : [FullState.Session] = fullState!.defaultDevice.sessions
-//            cell.sliderTextField.text = allSessions[indexPath.row].name
-            // or
-            cell.sliderTextField.text = sessionNames[indexPath.row]
-            cell.sliderTextField.tag = indexPath.row
+            // Remove the first session from the sessions array and use it to make this cell.
+            let targetSession = allSessions.removeLast()
+//            cell.sliderTextField.text = sessionNames[indexPath.row]
+            cell.sliderTextField.text = targetSession.name
             
-            cell.actualSlider.value = sliderValues[indexPath.row]
-            cell.actualSlider.tag = indexPath.row
+//            cell.actualSlider.value = sliderValues[indexPath.row]
+            cell.actualSlider.value = targetSession.volume
             
             
 //            sessionNames = Array(fullState!.deviceIds.values)
         }
-        
-//        let elementName = sessionNames[indexPath.row]
-//        let elementName = fullState!.deviceIds.values[indexPath.row]
-        
-        // Identify each cell by a numeric tag.
-        cell.tag = indexPath.row
-        
-        // Slider value is changed to the value read out of the JSON server message.
-        cell.sliderMuteButton.tag = indexPath.row
-//        print(elementName)
-        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 90.0
     }
-    
+}
 
-    
-
+extension ViewController: SliderCellDelegate {
+    // TODO: Both of these are going to send updates to the server, get a response, and update the global state.
+    func didChangeVolume(newvalue: Float) {
+        print("Volume: \(newvalue)")
+    }
+    func didToggleMute(muted: Bool) {
+        print("mute button hit")
+    }
 }
 
