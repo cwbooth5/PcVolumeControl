@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,13 +74,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KEP-mY-qSY">
                                 <rect key="frame" x="0.0" y="163" width="375" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.18823745846748352" green="0.18823251128196716" blue="0.18823352456092834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sliderCell" rowHeight="100" id="7kF-Gh-78R" customClass="SliderCell" customModule="PcVolumeControl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7kF-Gh-78R" id="obX-8a-yrP">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7kF-Gh-78R" id="obX-8a-yrP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -99,33 +98,19 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.99947589635848999" green="0.24735480546951294" blue="0.50587821006774902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
-                                                        <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbq-8V-y92"/>
                                                         <action selector="volumeChanged:" destination="7kF-Gh-78R" eventType="touchUpInside" id="szE-wq-p9x"/>
                                                     </connections>
                                                 </slider>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-fw-yaS">
-                                                    <rect key="frame" x="5" y="22.5" width="66.5" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="Gme-eY-7OE"/>
-                                                        <constraint firstAttribute="height" constant="60" id="Y6R-45-mj4"/>
-                                                        <constraint firstAttribute="width" secondItem="Hxy-fw-yaS" secondAttribute="height" multiplier="10:9" id="rB2-ji-aEV"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="unmute"/>
-                                                    <connections>
-                                                        <action selector="muteTapped:" destination="7kF-Gh-78R" eventType="valueChanged" id="9DD-3S-q5O"/>
-                                                    </connections>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cp2-U4-gp3" customClass="sessionMuteButton" customModule="PcVolumeControl" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="34" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title=" Mute "/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.10196217149496078" green="0.10195901244878769" blue="0.10195962339639664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Hxy-fw-yaS" secondAttribute="bottom" constant="22" id="PBl-1p-DEh"/>
-                                                <constraint firstItem="Hxy-fw-yaS" firstAttribute="top" secondItem="obX-8a-yrP" secondAttribute="top" constant="22" id="Tbl-d8-Yhd"/>
-                                                <constraint firstItem="Hxy-fw-yaS" firstAttribute="leading" secondItem="obX-8a-yrP" secondAttribute="leading" constant="5" id="aGQ-bB-RbW"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="actualSlider" destination="S3a-su-23S" id="f7c-nU-GWW"/>
-                                            <outlet property="sliderMuteButton" destination="Hxy-fw-yaS" id="EQu-hw-bmB"/>
                                             <outlet property="sliderTextField" destination="EWn-fB-Zt6" id="Xjb-dO-h8W"/>
                                         </connections>
                                     </tableViewCell>
@@ -157,7 +142,4 @@
             <point key="canvasLocation" x="-223.19999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="unmute" width="856" height="827"/>
-    </resources>
 </document>

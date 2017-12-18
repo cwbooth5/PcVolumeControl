@@ -9,8 +9,8 @@
 import UIKit
 
 protocol SliderCellDelegate {
-    func didChangeVolume(newvalue: Float)
-    func didToggleMute(muted: Bool)
+    func didChangeVolume(id: String, newvalue: Float)
+    func didToggleMute(id: String, muted: Bool)
 }
 
 // This covers individual cells, with one session per cell.
@@ -31,7 +31,7 @@ class SliderCell: UITableViewCell {
     }
     
     @IBAction func volumeChanged(_ sender: UISlider) {
-        delegate?.didChangeVolume(newvalue: sessionItem.volume)
+        delegate?.didChangeVolume(id: sessionItem.id, newvalue: actualSlider.value)
     }
     
     @IBAction func muteTapped(_ sender: UIButton) {
