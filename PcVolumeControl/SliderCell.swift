@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SliderCellDelegate {
-    func didChangeVolume(id: String, newvalue: Float)
+    func didChangeVolume(id: String, newvalue: Double, name: String)
     func didToggleMute(id: String, muted: Bool)
 }
 
@@ -26,12 +26,12 @@ class SliderCell: UITableViewCell {
     func setSessionParameter(session: Session) {
         sessionItem = session
         sliderTextField.text = session.name
-        actualSlider.value = session.volume
+        actualSlider.value = Float(session.volume)
         // TODO: mute button toggle
     }
     
     @IBAction func volumeChanged(_ sender: UISlider) {
-        delegate?.didChangeVolume(id: sessionItem.id, newvalue: actualSlider.value)
+        delegate?.didChangeVolume(id: sessionItem.id, newvalue: Double(actualSlider.value), name: sessionItem.name)
     }
     
     @IBAction func muteTapped(_ sender: UIButton) {

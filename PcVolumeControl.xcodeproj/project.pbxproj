@@ -16,6 +16,8 @@
 		A927E1551FC53AB10024D526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A927E1531FC53AB10024D526 /* LaunchScreen.storyboard */; };
 		A927E1601FC53AB10024D526 /* PcVolumeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927E15F1FC53AB10024D526 /* PcVolumeControlTests.swift */; };
 		A927E16B1FC53AB10024D526 /* PcVolumeControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927E16A1FC53AB10024D526 /* PcVolumeControlUITests.swift */; };
+		A952C1661FE8D3A6002559B3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A952C1651FE8D3A6002559B3 /* Alert.swift */; };
+		A952C1681FEA304F002559B3 /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A952C1671FEA304F002559B3 /* TCPController.swift */; };
 		A97414AB1FDF98BC00062954 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AA1FDF98BC00062954 /* SliderCell.swift */; };
 		A97414AD1FE629AC00062954 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AC1FE629AC00062954 /* Session.swift */; };
 		A97414AF1FE6CF3000062954 /* sessionMuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AE1FE6CF3000062954 /* sessionMuteButton.swift */; };
@@ -61,6 +63,8 @@
 		A927E1661FC53AB10024D526 /* PcVolumeControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PcVolumeControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A927E16A1FC53AB10024D526 /* PcVolumeControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcVolumeControlUITests.swift; sourceTree = "<group>"; };
 		A927E16C1FC53AB10024D526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A952C1651FE8D3A6002559B3 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A952C1671FEA304F002559B3 /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		A97414AA1FDF98BC00062954 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		A97414AC1FE629AC00062954 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A97414AE1FE6CF3000062954 /* sessionMuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sessionMuteButton.swift; sourceTree = "<group>"; };
@@ -145,8 +149,10 @@
 		A927E1491FC53AB10024D526 /* PcVolumeControl */ = {
 			isa = PBXGroup;
 			children = (
+				A952C1651FE8D3A6002559B3 /* Alert.swift */,
 				A927E14A1FC53AB10024D526 /* AppDelegate.swift */,
 				A927E14C1FC53AB10024D526 /* ViewController.swift */,
+				A952C1671FEA304F002559B3 /* TCPController.swift */,
 				A927E14E1FC53AB10024D526 /* Main.storyboard */,
 				A97414AA1FDF98BC00062954 /* SliderCell.swift */,
 				A97414AC1FE629AC00062954 /* Session.swift */,
@@ -468,10 +474,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A952C1661FE8D3A6002559B3 /* Alert.swift in Sources */,
 				A97414AD1FE629AC00062954 /* Session.swift in Sources */,
 				A97414AF1FE6CF3000062954 /* sessionMuteButton.swift in Sources */,
 				A927E14D1FC53AB10024D526 /* ViewController.swift in Sources */,
 				A97414AB1FDF98BC00062954 /* SliderCell.swift in Sources */,
+				A952C1681FEA304F002559B3 /* TCPController.swift in Sources */,
 				A927E14B1FC53AB10024D526 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

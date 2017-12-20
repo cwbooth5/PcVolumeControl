@@ -14,9 +14,9 @@ class Session {
     var id: String
     var muted: Bool
     var name: String
-    var volume: Float
+    var volume: Double
     
-    init(id: String, muted: Bool, name: String, volume: Float) {
+    init(id: String, muted: Bool, name: String, volume: Double) {
         self.id = id
         self.muted = muted
         self.name = name
