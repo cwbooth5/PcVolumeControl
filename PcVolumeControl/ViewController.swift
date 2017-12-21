@@ -30,12 +30,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // bottom sliders for sessions
     @IBOutlet weak var sliderTableView: UITableView!
     
-    let protocolVersion = 5
+    let protocolVersion = 6
     var serverConnected: Bool?
-    var client: TCPClient?
-    var lastState: String?
-    var wholeResponse = [UInt8]()
-    var fullState: FullState?
+//    var client: TCPClient?
     var soundLevel: Float?
     var selectedDefaultDevice: (String, String)?
     
@@ -43,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var processedSessions = [Session]() // Array used to
     var IPaddr: String!
     var PortNum: String!
+    var controller: TCPController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +60,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sliderTableView.tableFooterView = UIView(frame: CGRect.zero) // remove footer
         
         constructPicker()
+        
     }
+    
+    @IBAction func sendButtonAction() {
+        // This is the 'connect' button.
+        IPaddr = serverIPField.text
+        PortNum = serverPortField.text
+        controller = TCPController(address: IPaddr, port: PortNum, delegate: self)
+        
+        // TODO: pass in self to force it always to set a delegate.
+//        controller.delegate = self
+        if controller.serverConnected {
+            connectionStatus.text = "Connected"
+        } else {
+            connectionStatus.text = "Disconnected"
+        }
+    }
+    
     func appMovedToBackground() {
         // Tear down the TCP connection any time they minimize or exit the app.
         print("App moved to background!")
-        closeTCPConnection(client: client!)
+        controller.closeTCPConnection()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,11 +91,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initSessions() {
         
-        if fullState != nil {
+//        if controller.fullState != nil {
+        if controller.serverConnected {
             // Connecting for the first time.
             allSessions.removeAll()
             
-            for x : FullState.Session in fullState!.defaultDevice.sessions {
+            for x : FullState.Session in controller.fullState!.defaultDevice.sessions {
                 // build an array of all the sessions.
                 allSessions.append(Session(id: x.id, muted: x.muted, name: x.name, volume: Double(x.volume)))
             }
@@ -90,103 +106,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
     func findDeviceId(longName: String) -> String {
         // Look through the device IDs to get the short-form device ID.
         // This takes in the long-form session ID as input.
-        for (shortId, _) in (fullState?.deviceIds)! {
+        for (shortId, _) in (controller.fullState?.deviceIds)! {
             if longName.contains(shortId) {
                 return shortId
             }
         }
         return "DERP"
-    }
-    
-//    func findDevicePrettyName(id: String) {
-//        // Input a long session ID and get back the name from that session.
-//        for (key, value) in (fullState?.defaultDevice.sessions) {
-////            for (key, value) in item {
-////                print(item)
-////            }
-//        }
-////        for (shortId, _) in (fullState?.deviceIds)! {
-////            if longName.contains(shortId) {
-////                return shortId
-////            }
-////        }
-////        return "DERP"
-//
-//    }
-    
-    func openTCPConnection(address: String, portNum: String) -> TCPClient?{
-        let c = TCPClient(address: address, port: Int32(portNum)!)
-        // timeout, in seconds
-        switch c.connect(timeout: 5) {
-        case .success:
-            client = c // update the global client used by everybody.
-            connectionStatus.text = "Connected"
-            if let response = readResponse(from: c) {
-                print("got a response...")
-                reloadTheWorld() //update global state.
-                serverConnected = true
-                return c
-            }
-            
-        case .failure(let error):
-            connectionStatus.text = "Disconnected"
-            serverConnected = false
-            return c
-        }
-        return c
-    }
-    
-    func closeTCPConnection(client: TCPClient) {
-        //TODO: tear down when the app is minimized.
-        print("Tearing down TCP Connection...")
-        client.close()
-    }
-   
-    @IBAction func sendButtonAction() {
-        IPaddr = serverIPField.text
-        PortNum = serverPortField.text
-        client = openTCPConnection(address: IPaddr, portNum: PortNum)
-    }
-    
-    private func sendRequest(string: String, using client: TCPClient) -> String? {
-
-        switch client.send(string: string) {
-        case .success:
-            return readResponse(from: client)
-        case .failure(let error):
-            print(error)
-            return nil
-        }
-    }
-    
-    private func readResponse(from client: TCPClient) -> String? {
-        while true {
-            guard let data = client.read(1024*10, timeout: 5) else { break }
-            wholeResponse += data
-        }
-        
-        let stringResponse = String(bytes: wholeResponse, encoding: .utf8)
-        lastState = stringResponse
-        let json = stringResponse!.data(using: .utf8)!
-        do {
-            let decodedState = try JSONDecoder().decode(FullState.self, from: json)
-            dump(decodedState) //debug
-            fullState = decodedState //make it pretty much global
-            print(decodedState.version)
-        } catch Swift.DecodingError.dataCorrupted {
-            Alert.showBasic(title: "JSON data corrupted!", message: "The server sent garbage back!", vc: self)
-        } catch {
-            //what the fuck
-            print(error.localizedDescription)
-        }
-
-        
-        return stringResponse
     }
     
     func reloadTheWorld() {
@@ -202,33 +130,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.sliderTableView.reloadData()
         }
     }
-    
-    class FullState : Codable {
-            struct theDefaultDevice : Codable {
-                let deviceId: String
-                let masterMuted: Bool
-                let masterVolume: Double
-                let name: String
-                let sessions: [Session]
-                
-            }
-            struct Session : Codable {
-                let id: String
-                let muted: Bool
-                let name: String
-                let volume: Double
-            }
-            let defaultDevice: theDefaultDevice
-            let deviceIds: [String: String]
-            let version: Int
-        
-        init(version: Int, deviceIds: [String:String], defaultDevice: theDefaultDevice) {
-            self.version = version
-            self.deviceIds = deviceIds
-            self.defaultDevice = defaultDevice
-        }
-    }
 }
+
+//
+// EXTENSIONS
+//
 
 // This controls the picker view for the master/default device.
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -259,7 +165,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func getDeviceIds() -> [(String, String)] {
         // return an array of tuples showing all available device IDs and pretty names
         var y = [(String, String)]()
-        for (shortId, prettyName) in (fullState?.deviceIds)! {
+        // TODO: test for nil
+        for (shortId, prettyName) in (controller.fullState?.deviceIds)! {
             y.append((shortId, prettyName))
         }
         return y
@@ -279,20 +186,19 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         let id = selectedDefaultDevice?.0
         let defaultDevId = ADefaultDeviceUpdate.adflDevice(deviceId: id!)
-        let data = ADefaultDeviceUpdate(version: 5, defaultDevice: defaultDevId)
+        let data = ADefaultDeviceUpdate(version: protocolVersion, defaultDevice: defaultDevId)
         
         let encoder = JSONEncoder()
         
         do {
             let dataAsBytes = try! encoder.encode(data)
             dump(dataAsBytes)
-            print(dataAsBytes)
+//            print(dataAsBytes)
             // The data is supposed to be an array of Uint8.
             let dataAsString = String(bytes: dataAsBytes, encoding: .utf8)
             let dataWithNewline = dataAsString! + "\n"
-            //            print(String(data: dataAsBytes, encoding: .utf8)!)
-            let response = sendRequest(string: dataWithNewline, using: client!)
-            print(response)
+            let response = controller.sendRequest(string: dataWithNewline, using: controller.client!)
+//            print(response)
         } catch {
             print(error.localizedDescription)
         }
@@ -398,20 +304,17 @@ extension ViewController: SliderCellDelegate {
         
         let encoder = JSONEncoder()
         // TODO: return current muted state and use that to make the onesession instance.
-        let onesession = OneSession(name: name, id: id, volume: 90.0, muted: false)
+        let onesession = OneSession(name: name, id: id, volume: newvalue, muted: false)
         let adefault = ASessionUpdate.adflDevice(sessions: [onesession], deviceId: defaultDeviceShortId)
-        let data = ASessionUpdate(version: 5, defaultDevice: adefault)
+        let data = ASessionUpdate(version: protocolVersion, defaultDevice: adefault)
         
         do {
             let dataAsBytes = try! encoder.encode(data)
             dump(dataAsBytes)
-            print(dataAsBytes)
             // The data is supposed to be an array of Uint8.
             var dataAsString = String(bytes: dataAsBytes, encoding: .utf8)
             var dataWithNewline = dataAsString! + "\n"
-//            print(String(data: dataAsBytes, encoding: .utf8)!)
-            let response = sendRequest(string: dataWithNewline, using: client!)
-            print(response)
+            let response = controller.sendRequest(string: dataWithNewline, using: controller.client!)
         } catch {
             print(error.localizedDescription)
         }
@@ -419,6 +322,14 @@ extension ViewController: SliderCellDelegate {
         
     func didToggleMute(id: String, muted: Bool) {
         print("mute button hit")
+    }
+}
+
+extension ViewController: TCPControllerDelegate {
+    
+    func didGetServerUpdate() {
+        print("oh no!")
+        reloadTheWorld()
     }
 }
 

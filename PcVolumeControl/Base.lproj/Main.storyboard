@@ -96,7 +96,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="S3a-su-23S">
                                                     <rect key="frame" x="76" y="59" width="290" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" red="0.99947589635848999" green="0.24735480546951294" blue="0.50587821006774902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" red="0.8113132119178772" green="0.85860419273376465" blue="0.34492787718772888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="volumeChanged:" destination="7kF-Gh-78R" eventType="touchUpInside" id="szE-wq-p9x"/>
                                                     </connections>
