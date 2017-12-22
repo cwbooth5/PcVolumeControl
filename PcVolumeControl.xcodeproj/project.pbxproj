@@ -17,10 +17,10 @@
 		A927E1601FC53AB10024D526 /* PcVolumeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927E15F1FC53AB10024D526 /* PcVolumeControlTests.swift */; };
 		A927E16B1FC53AB10024D526 /* PcVolumeControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927E16A1FC53AB10024D526 /* PcVolumeControlUITests.swift */; };
 		A952C1661FE8D3A6002559B3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A952C1651FE8D3A6002559B3 /* Alert.swift */; };
-		A952C1681FEA304F002559B3 /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A952C1671FEA304F002559B3 /* TCPController.swift */; };
 		A97414AB1FDF98BC00062954 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AA1FDF98BC00062954 /* SliderCell.swift */; };
 		A97414AD1FE629AC00062954 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AC1FE629AC00062954 /* Session.swift */; };
 		A97414AF1FE6CF3000062954 /* sessionMuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97414AE1FE6CF3000062954 /* sessionMuteButton.swift */; };
+		A9A25CCE1FEB61DD009C985B /* StreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A25CCD1FEB61DD009C985B /* StreamController.swift */; };
 		A9B8A3E11FC8DCCA001F6A59 /* littlecrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B8A3E01FC8DCCA001F6A59 /* littlecrow.png */; };
 		C52F283691D46C907B40E610 /* Pods_PcVolumeControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44154FABEF460A95987B8D20 /* Pods_PcVolumeControlUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,10 +64,10 @@
 		A927E16A1FC53AB10024D526 /* PcVolumeControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcVolumeControlUITests.swift; sourceTree = "<group>"; };
 		A927E16C1FC53AB10024D526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A952C1651FE8D3A6002559B3 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		A952C1671FEA304F002559B3 /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		A97414AA1FDF98BC00062954 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		A97414AC1FE629AC00062954 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A97414AE1FE6CF3000062954 /* sessionMuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sessionMuteButton.swift; sourceTree = "<group>"; };
+		A9A25CCD1FEB61DD009C985B /* StreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamController.swift; sourceTree = "<group>"; };
 		A9B8A3E01FC8DCCA001F6A59 /* littlecrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = littlecrow.png; path = ../../../../Desktop/littlecrow.png; sourceTree = "<group>"; };
 		BC0C05349FA2A35B69E7936E /* Pods-PcVolumeControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PcVolumeControlUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PcVolumeControlUITests/Pods-PcVolumeControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E497C089C2FB3C823939B7C5 /* Pods-PcVolumeControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PcVolumeControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PcVolumeControlTests/Pods-PcVolumeControlTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 				A952C1651FE8D3A6002559B3 /* Alert.swift */,
 				A927E14A1FC53AB10024D526 /* AppDelegate.swift */,
 				A927E14C1FC53AB10024D526 /* ViewController.swift */,
-				A952C1671FEA304F002559B3 /* TCPController.swift */,
 				A927E14E1FC53AB10024D526 /* Main.storyboard */,
+				A9A25CCD1FEB61DD009C985B /* StreamController.swift */,
 				A97414AA1FDF98BC00062954 /* SliderCell.swift */,
 				A97414AC1FE629AC00062954 /* Session.swift */,
 				A97414AE1FE6CF3000062954 /* sessionMuteButton.swift */,
@@ -260,6 +260,8 @@
 				TargetAttributes = {
 					A927E1461FC53AB10024D526 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = BP75F4S5N3;
+						ProvisioningStyle = Automatic;
 					};
 					A927E15A1FC53AB10024D526 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -475,11 +477,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A952C1661FE8D3A6002559B3 /* Alert.swift in Sources */,
+				A9A25CCE1FEB61DD009C985B /* StreamController.swift in Sources */,
 				A97414AD1FE629AC00062954 /* Session.swift in Sources */,
 				A97414AF1FE6CF3000062954 /* sessionMuteButton.swift in Sources */,
 				A927E14D1FC53AB10024D526 /* ViewController.swift in Sources */,
 				A97414AB1FDF98BC00062954 /* SliderCell.swift in Sources */,
-				A952C1681FEA304F002559B3 /* TCPController.swift in Sources */,
 				A927E14B1FC53AB10024D526 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +627,9 @@
 			baseConfigurationReference = 784048895FDEE72E5BF0656F /* Pods-PcVolumeControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BP75F4S5N3;
+				"DEVELOPMENT_TEAM[sdk=*]" = BP75F4S5N3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftSocket\"",
@@ -634,6 +639,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = moronbros.PcVolumeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -643,6 +650,8 @@
 			baseConfigurationReference = 0BA2255E57FA4C02678D5451 /* Pods-PcVolumeControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BP75F4S5N3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftSocket\"",
@@ -652,6 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = moronbros.PcVolumeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
