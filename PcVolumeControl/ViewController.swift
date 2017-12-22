@@ -31,8 +31,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sliderTableView: UITableView!
     
     let protocolVersion = 6
-    var serverConnected: Bool?
-//    var client: TCPClient?
+    var SController: StreamController?
+    
+    
     var soundLevel: Float?
     var selectedDefaultDevice: (String, String)?
     
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var processedSessions = [Session]() // Array used to
     var IPaddr: String!
     var PortNum: String!
-    var controller: TCPController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // This is the 'connect' button.
         IPaddr = serverIPField.text
         PortNum = serverPortField.text
-        controller = TCPController(address: IPaddr, port: PortNum, delegate: self)
+//        controller = TCPController(address: IPaddr, port: PortNum, delegate: self)
+        
+        SController = StreamController(address: IPaddr, port: PortNum, delegate: self)
+        SController?.setupNetworkCommunication()
+//        SController?.sendString(input: "n")
         
         // TODO: pass in self to force it always to set a delegate.
-//        controller.delegate = self
-        if controller.serverConnected {
+        SController?.delegate = self
+        if SController?.serverConnected ?? true {
             connectionStatus.text = "Connected"
         } else {
             connectionStatus.text = "Disconnected"
@@ -81,7 +86,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func appMovedToBackground() {
         // Tear down the TCP connection any time they minimize or exit the app.
         print("App moved to background!")
-        controller.closeTCPConnection()
+        // TODO
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,25 +96,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initSessions() {
         
-//        if controller.fullState != nil {
-        if controller.serverConnected {
-            // Connecting for the first time.
-            allSessions.removeAll()
-            
-            for x : FullState.Session in controller.fullState!.defaultDevice.sessions {
-                // build an array of all the sessions.
-                allSessions.append(Session(id: x.id, muted: x.muted, name: x.name, volume: Double(x.volume)))
-            }
-        } else {
-            print("This is the initial screen draw, prior to the sessions being loded after connect.")
-//            allSessions.append(Session(id: "123", muted: false, name: "placeholder", volume: 20.0))
+        allSessions.removeAll()
+        processedSessions.removeAll()
+        
+//        guard let state = SController!.fullState!.defaultDevice.sessions else { return }
+        
+        for x : FullState.Session in SController!.fullState!.defaultDevice.sessions {
+            // build an array of all the sessions.
+            allSessions.append(Session(id: x.id, muted: x.muted, name: x.name, volume: Double(x.volume)))
         }
+//        processedSessions = allSessions
+      
     }
     
     func findDeviceId(longName: String) -> String {
         // Look through the device IDs to get the short-form device ID.
         // This takes in the long-form session ID as input.
-        for (shortId, _) in (controller.fullState?.deviceIds)! {
+        for (shortId, _) in (SController?.fullState?.deviceIds)! {
             if longName.contains(shortId) {
                 return shortId
             }
@@ -120,9 +123,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func reloadTheWorld() {
         // Reload everything! All the things!
         
+//        if processedSessions.count > 0 {
+//            allSessions = processedSessions
+//        }
         // re-populate the array of current sessions and reload the sliders.
         let indexPath = IndexPath(row: allSessions.count - 1, section: 0)
         buildSliderStack(index: indexPath)
+        print("test")
         initSessions()
         
         // This reloads the sliderTableView completely.
@@ -166,7 +173,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         // return an array of tuples showing all available device IDs and pretty names
         var y = [(String, String)]()
         // TODO: test for nil
-        for (shortId, prettyName) in (controller.fullState?.deviceIds)! {
+        for (shortId, prettyName) in (SController?.fullState?.deviceIds)! {
             y.append((shortId, prettyName))
         }
         return y
@@ -178,7 +185,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         struct ADefaultDeviceUpdate : Codable {
             struct adflDevice : Codable {
                 let deviceId: String
-                
             }
             let version: Int
             let defaultDevice: adflDevice
@@ -197,8 +203,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             // The data is supposed to be an array of Uint8.
             let dataAsString = String(bytes: dataAsBytes, encoding: .utf8)
             let dataWithNewline = dataAsString! + "\n"
-            let response = controller.sendRequest(string: dataWithNewline, using: controller.client!)
-//            print(response)
+            SController?.sendString(input: dataWithNewline)
         } catch {
             print(error.localizedDescription)
         }
@@ -225,25 +230,30 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 // This code controls the tableView rows the sliders live in.
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func insertNewSlider(index: IndexPath) {
-        sliderTableView.deleteRows(at: [index], with: .automatic)
-        sliderTableView.insertRows(at: [index], with: .automatic)
-    }
+//    func insertNewSlider(index: IndexPath) {
+//        sliderTableView.deleteRows(at: [index], with: .automatic)
+//        sliderTableView.insertRows(at: [index], with: .automatic)
+//    }
     
     func buildSliderStack(index: IndexPath){
+        
+        // We have to know how many cells we had in the stack prior to an update.
+//        if allSessions.count == 0 {
+//            initSessions()
+//        }
         
         sliderTableView.beginUpdates()
 
         // for all sessions
-        for session in allSessions {
-            print(session.name)
-            print(" - \(session.id)")
-            print(" - \(session.muted)")
-            print(" - \(session.volume)")
-            insertNewSlider(index: index)
-            allSessions = allSessions.filter { $0 !== session }
-            print("Removing session: \(session)")
-        }
+//        for session in allSessions {
+//            print(session.name)
+//            print(" - \(session.id)")
+//            print(" - \(session.muted)")
+//            print(" - \(session.volume)")
+//            insertNewSlider(index: index)
+//            allSessions = allSessions.filter { $0 !== session }
+//            print("Removing session: \(session)")
+//        }
         
         sliderTableView.endUpdates()
         DispatchQueue.main.async{
@@ -255,7 +265,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: the picker is going to have to list all the device IDs...
 //        return sessionNames.count
+        if allSessions.count >= 1 {
+            initSessions()
+        }
+        if processedSessions.count > allSessions.count {
+            return processedSessions.count
+        }
         return allSessions.count
+
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // The full table needs to completely reload.
@@ -266,9 +283,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if allSessions.count == 0 {
             initSessions()  // populate the sessions array again. We changed the view.
         }
+        
         let targetSession = allSessions.removeFirst()
-       
+        
+        processedSessions.append(targetSession)
         cell.setSessionParameter(session: targetSession)
+        
+       
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -314,7 +336,8 @@ extension ViewController: SliderCellDelegate {
             // The data is supposed to be an array of Uint8.
             var dataAsString = String(bytes: dataAsBytes, encoding: .utf8)
             var dataWithNewline = dataAsString! + "\n"
-            let response = controller.sendRequest(string: dataWithNewline, using: controller.client!)
+            SController?.sendString(input: dataWithNewline)
+            reloadTheWorld()
         } catch {
             print(error.localizedDescription)
         }
@@ -325,10 +348,10 @@ extension ViewController: SliderCellDelegate {
     }
 }
 
-extension ViewController: TCPControllerDelegate {
+extension ViewController: StreamControllerDelegate {
     
     func didGetServerUpdate() {
-        print("oh no!")
+        print("Server update detected. Reloading...")
         reloadTheWorld()
     }
 }
